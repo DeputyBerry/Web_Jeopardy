@@ -1,40 +1,47 @@
-// INITIALIZE GAME BOARD ON LOAD
-initCatRow();
-initBoard();
+//INITIALIZE THE GAME BOARD ON PAGE LOAD
+initCatRow()
+initBoard()
+
+// document.querySelector('button').addEventListener('click',buildCategories)
+
+//CREATE CATEGORY ROW
 
 function initCatRow() {
-    let catRow = document.getElementById('category-row');
+    let catRow = document.getElementById('category-row')
 
-    for(let i = 0; i < 6; i++) {
-        let box = document.createElement('div');
-        box.className = 'clue-box category-box';
-        catRow.appendChild(box);
-
+    for (let i=0; i<6; i++) {
+        let box = document.createElement('div')
+        box.className = 'clue-box category-box'
+        catRow.appendChild(box)
     }
+
 }
 
-function initBoard(){
-    let board = document.getElementById('clue-board');
+//CREATE CLUE BOARD
 
-    // GENERATE 5 ROWS, THEN NEST 6 BOXES IN EACH ROW
+function initBoard() {
+    let board = document.getElementById('clue-board')
 
-    for(let i = 0; i < 5; i++){
-        let row = document.createElement('div');
-        let boxValue = 200 * (i + 1);
-        row.className = 'clue-row';
+    //GENERATE 5 ROWS, THEN PLACE 6 BOXES IN EACH ROW
 
-        for(let j = 0; j < 6; j++){
-            let box = document.createElement('div');
-            box.className = 'clue-box';
-            box.innerHTML = '$' + boxValue;
-            // box.appendChild(document.createTextNode('$' + boxValue));
-            box.addEventListener('click', getClue, false)
-            row.appendChild(box);
+    for (let i = 0; i < 5; i++) {
+        let row = document.createElement('div')
+        let boxValue = 200 * (i + 1)
+        row.className = 'clue-row'
+
+        for (let j=0; j<6; j++) {
+            let box = document.createElement('div')
+            box.className = 'clue-box'
+            box.textContent = '$' + boxValue
+            //box.appendChild( document.createTextNode(boxValue) ) //backwards compatible
+            box.addEventListener('click',getClue, false)
+            row.appendChild(box)
         }
-        board.appendChild(row);
+
+        board.appendChild(row)
     }
 }
 
-function getClue() {
+function getClue(){
     console.log('cheeks clapped...')
 }

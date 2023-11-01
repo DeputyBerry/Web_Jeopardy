@@ -1,26 +1,26 @@
-body{
+body {
     box-sizing: border-box;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightgray;
 }
 
-h1{
+h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
-button{
+button {
     font-size: 2rem;
     margin-bottom: 15px;
 }
 
-span{
+span {
     font-size: 2rem;
     font-weight: bold;
 }
 
-#game-container{
+#game-container {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -28,24 +28,41 @@ span{
     margin: 10px auto;
 }
 
-#category-row{
+#category-row {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-#clue-board{
+#clue-board {
     flex-direction: column;
 }
 
-.clue-row{
+.clue-row {
     display: flex;
 }
 
-.clue-box{
+.clue-box {
     display: flex;
+    align-items: center; /*vertical*/
+    justify-content: center; /*horizontal*/
+    border: 2px solid white;
+    background-color: blue;
+    color: white;
     border-radius: 5px;
     margin: 5px;
+    font-size: 2rem;
+    font-weight: bold;
     height: 100px;
     flex: 1;
+    text-transform: uppercase;
+}
+
+.category-box {
+    font-size: .8rem;
+    line-height: 25px;
+}
+
+.clicked-box {
+    font-size: 1rem;
 }
